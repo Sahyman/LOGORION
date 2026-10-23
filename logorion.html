@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGORION</title> 
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #07111c;
+            color: white;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: #071522;
+            border-bottom: 1px solid #16496d;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #55baff;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff963c;
+        }
+
+        .botao-menu {
+            border: 1px solid #ff963c;
+            padding: 9px 18px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .botao-menu:hover {
+            background: #ff963c;
+            color: #07111c;
+        }
+
+        /* =========================
+           INÍCIO
+        ========================= */
+
+        #inicio {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+            background: radial-gradient(
+                circle,
+                #123d61 0%,
+                #0a2035 45%,
+                #050b12 100%
+            );
+        }
+
+        .inicio-conteudo {
+            max-width: 900px;
+        }
+
+        .inicio-conteudo h1 {
+            font-size: clamp(60px, 10vw, 110px);
+            letter-spacing: 12px;
+            color: #5fc3ff;
+            text-shadow: 0 0 10px #1684c4, 0 0 30px #07517e;
+        }
+
+        .inicio-conteudo h2 {
+            margin-top: 15px;
+            color: #ff9a3c;
+            font-size: 23px;
+            font-weight: normal;
+        }
+
+        .inicio-conteudo p {
+            max-width: 700px;
+            margin: 30px auto;
+            line-height: 1.8;
+            color: #d1dbe4;
+            font-size: 17px;
+        }
+
+        .botao-principal {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #ff9135;
+            color: #07111c;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .botao-principal:hover {
+            background: #ffad62;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .titulo-secao h2 {
+            font-size: 40px;
+            color: #5fc3ff;
+            margin-bottom: 12px;
+        }
+
+        .titulo-secao p {
+            color: #9eacb9;
+        }
+
+        /* =========================
+           HISTÓRIA
+        ========================= */
+
+        #historia {
+            background: #081725;
+        }
+
+        .historia-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .historia-texto h3 {
+            font-size: 29px;
+            color: #ff963c;
+            margin-bottom: 20px;
+        }
+
+        .historia-texto p {
+            color: #c8d2db;
+            line-height: 1.9;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        /* Correção aplicada na imagem da história */
+        .espaco-imagem {
+            width: 100%;
+            height: 370px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #0c1b2a;
+            border: 1px solid #194c70;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .espaco-imagem:hover {
+            border-color: #ff963c;
+            box-shadow: 0 10px 25px rgba(0, 100, 180, 0.25);
+        }
+
+        .espaco-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* =========================
+           PERSONAGENS
+        ========================= */
+
+        #personagens {
+            background: #050d16;
+        }
+
+        .personagens-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .personagem {
+            background: #0c1b2a;
+            border: 1px solid #194c70;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .personagem:hover {
+            transform: translateY(-7px);
+            border-color: #ff963c;
+            box-shadow: 0 10px 25px rgba(0, 100, 180, 0.25);
+        }
+
+        .imagem-personagem {
+            width: 100%;
+            height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #091725;
+            border-bottom: 1px dashed #24658e;
+        }
+
+        .imagem-personagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .informacoes-personagem {
+            padding: 25px;
+        }
+
+        .informacoes-personagem h3 {
+            font-size: 27px;
+            color: #5fc3ff;
+            margin-bottom: 8px;
+        }
+
+        .funcao {
+            color: #ff963c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .informacoes-personagem p {
+            color: #b7c3ce;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           LIVROS
+        ========================= */
+
+        #livros {
+            background: #081725;
+        }
+
+        .texto-livros {
+            max-width: 750px;
+            margin: 0 auto 50px;
+            text-align: center;
+            color: #c1ccd5;
+            line-height: 1.8;
+        }
+
+        .livros-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .livro {
+            background: #0c1b2a;
+            border: 1px solid #194c70;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .livro:hover {
+            transform: translateY(-7px);
+            border-color: #ff963c;
+            box-shadow: 0 10px 25px rgba(0, 100, 180, 0.20);
+        }
+
+        .capa-livro {
+            width: 100%;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0b2034;
+            border-bottom: 1px dashed #24658e;
+            overflow: hidden;
+        }
+
+        .capa-livro img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .informacoes-livro {
+            padding: 25px;
+        }
+
+        .numero-livro {
+            color: #ff963c;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .informacoes-livro h3 {
+            color: #5fc3ff;
+            font-size: 25px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .informacoes-livro p {
+            color: #b7c3ce;
+            line-height: 1.7;
+        }
+
+        #mapa1, #mapa2, #mapa3 {
+            width: 100%;
+        }
+
+        /* =========================
+           O JOGO
+        ========================= */
+
+        #jogo {
+            background: #050d16;
+            text-align: center;
+        }
+
+        .jogo-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .jogo-container p {
+            color: #c4ced7;
+            line-height: 1.9;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .destaque {
+            color: #ff963c;
+            font-weight: bold;
+        }
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        #final {
+            text-align: center;
+            background: radial-gradient(
+                circle,
+                #123d61,
+                #081725 65%,
+                #050b12
+            );
+        }
+
+        #final h2 {
+            font-size: 40px;
+            color: #5fc3ff;
+            margin-bottom: 20px;
+        }
+
+        #final p {
+            color: #c0cbd4;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+
+            .historia-container {
+                grid-template-columns: 1fr;
+            }
+
+            .personagens-container,
+            .livros-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .logo {
+                font-size: 21px;
+            }
+
+            .botao-menu {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+            .inicio-conteudo h1 {
+                font-size: 50px;
+                letter-spacing: 4px;
+            }
+
+            .inicio-conteudo h2 {
+                font-size: 19px;
+            }
+
+            .titulo-secao h2 {
+                font-size: 31px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+    <header>
+        <div class="logo">LOGORION</div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#historia">História</a>
+            <a href="#personagens">Personagens</a>
+            <a href="#livros">Livros</a>
+            <a href="#jogo">O Jogo</a>
+        </nav>
+        <a href="#historia" class="botao-menu">Explorar</a>
+    </header>
+
+    <!-- INÍCIO -->
+    <section id="inicio">
+        <div class="inicio-conteudo">
+            <h1>LOGORION</h1>
+            <h2>Uma aventura dentro dos livros</h2>
+            <p>
+                Otávio precisa estudar para o ENEM e vai
+                até uma biblioteca. O que ele não sabe é
+                que a biblioteca é assombrada.
+            </p>
+            <a href="#historia" class="botao-principal">Conheça a história</a>
+        </div>
+    </section>
+
+    <!-- HISTÓRIA -->
+    <section id="historia">
+        <div class="titulo-secao">
+            <h2>História</h2>
+            <p>A jornada de Otávio</p>
+        </div>
+
+        <div class="historia-container">
+            <div class="historia-texto">
+                <h3>Dentro de um livro</h3>
+                <p>
+                    Otávio é um menino que precisa estudar
+                    para o ENEM. Para estudar, ele decide
+                    ir até uma biblioteca.
+                </p>
+                <p>
+                    Porém, quando entra na biblioteca,
+                    Otávio não sabe que o local é assombrado.
+                </p>
+                <p>
+                    Ao abrir um livro, algo inesperado
+                    acontece: Otávio entra dentro dele.
+                </p>
+                <p>
+                    Agora, ele precisa passar por uma das
+                    tramas principais do livro em que entrou.
+                </p>
+                <p>
+                    Durante o jogo, Otávio entra em
+                    <strong>3 livros principais</strong>.
+                </p>
+            </div>
+
+            <div class="espaco-imagem">
+                <img src="https://res.cloudinary.com/p9bc22lf/image/upload/v1790272974/fa96a269-8e68-4a59-8c51-41059fce0cb3_l6o4zn.jpg" alt="Biblioteca">
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONAGENS -->
+    <section id="personagens">
+        <div class="titulo-secao">
+            <h2>Personagens</h2>
+            <p>Personagens principais de LOGORION</p>
+        </div>
+
+        <div class="personagens-container">
+            <!-- OTÁVIO -->
+            <div class="personagem">
+                <div class="imagem-personagem">
+                    <img src="https://res.cloudinary.com/p9bc22lf/image/upload/v1792778157/ed621f24-e6cc-4846-9ee8-8aa043b21711_wb01j0.jpg" alt="Otávio">
+                </div>
+                <div class="informacoes-personagem">
+                    <h3>Otávio</h3>
+                    <div class="funcao">Protagonista</div>
+                    <p>
+                        Otávio é o protagonista de LOGORION.
+                        Ele precisa estudar para o ENEM e acaba
+                        entrando dentro de um livro ao visitar
+                        uma biblioteca.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BARTOLOMEU -->
+            <div class="personagem">
+                <div class="imagem-personagem">
+                    <img id="bart" src="https://res.cloudinary.com/p9bc22lf/image/upload/v1790275941/5ba831be-f6fa-4aba-b8d4-1d44e31e290e_afmylw.jpg" alt="Bartolomeu">
+                </div>
+                <div class="informacoes-personagem">
+                    <h3>Bartolomeu</h3>
+                    <div class="funcao">Vilão</div>
+                    <p>Bartolomeu é o vilão de LOGORION.</p>
+                </div>
+            </div>
+
+            <!-- BIBLIOTECÁRIA -->
+            <div class="personagem">
+                <div class="imagem-personagem">
+                    <img src="https://res.cloudinary.com/p9bc22lf/image/upload/v1792777569/9fba7c02-10af-4edd-b0b7-d6b2d8a57d44_fpnksu.jpg" alt="A Bibliotecária">
+                </div>
+                <div class="informacoes-personagem">
+                    <h3>A Bibliotecária</h3>
+                    <div class="funcao">Bibliotecária</div>
+                    <p>A Bibliotecária é uma das personagens principais de LOGORION.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVROS -->
+    <section id="livros">
+        <div class="titulo-secao">
+            <h2>Livros</h2>
+            <p>Os três livros principais do jogo</p>
+        </div>
+
+        <div class="texto-livros">
+            <p>
+                Durante sua jornada, Otávio entra em
+                três livros principais. Dentro deles,
+                ele precisa passar por uma das tramas
+                principais do livro em que entrou.
+            </p>
+        </div>
+
+        <div class="livros-container">
+            <!-- LIVRO 1 -->
+            <div class="livro">
+                <div class="capa-livro">
+                    <img id="mapa1" src="https://res.cloudinary.com/p9bc22lf/image/upload/v1790272343/2990c841-dafc-47bb-bc6f-6adcb4fc2c5a_xhtymv.jpg" alt="Livro 1">
+                </div>
+                <div class="informacoes-livro">
+                    <span class="numero-livro">LIVRO 1</span>
+                    <h3>Livro 1</h3>
+                    <p>A cena passa-se numa praça ou espaço público urbano durante a noite, iluminada por um poste de luz que projeta um facho sobre o chão pavimentado.</p>
+                </div>
+            </div>
+
+            <!-- LIVRO 2 -->
+            <div class="livro">
+                <div class="capa-livro">
+                    <img id="mapa2" src="https://res.cloudinary.com/p9bc22lf/image/upload/v1790272553/5617c27b-b9fa-40f0-85e0-ce96c9b5bfba_tpmbti.jpg" alt="Livro 2">
+                </div>
+                <div class="informacoes-livro">
+                    <span class="numero-livro">LIVRO 2</span>
+                    <h3>Livro 2</h3>
+                    <p>A cena passa-se numa praia , mar com ondas, um pequeno cais ao fundo e um quiosque de praia com teto de palha e bancos. Há uma grande estrutura de palco com colunas de som e um ecrã grande que reproduz um videoclipe a preto e branco com legendas em português</p>
+                </div>
+            </div>
+
+            <!-- LIVRO 3 -->
+            <div class="livro">
+                <div class="capa-livro">
+                    <img id="mapa3" src="https://res.cloudinary.com/p9bc22lf/image/upload/v1790272623/c044850d-8f69-42d3-9d71-1bdb56defdc0_lzfkty.jpg" alt="Livro 3">
+                </div>
+                <div class="informacoes-livro">
+                    <span class="numero-livro">LIVRO 3</span>
+                    <h3>Livro 3</h3>
+                    <p>O ambiente tem paredes e detalhes vermelhos com acabamentos dourados, filas de assentos de teatro virados para a frente e uma placa de "EXIT" numa porta à esquerda. Ao fundo, há um grande ecrã que exibe uma imagem a preto e branco.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O JOGO -->
+    <section id="jogo">
+        <div class="titulo-secao">
+            <h2>O Jogo</h2>
+            <p>A aventura de LOGORION</p>
+        </div>
+
+        <div class="jogo-container">
+            <p>
+                Otávio vai até uma biblioteca para estudar
+                para o ENEM, mas acaba descobrindo que o local
+                guarda algo inesperado.
+            </p>
+            <p>
+                Ao abrir um livro, ele entra dentro dele
+                e precisa passar por uma das tramas principais
+                daquele livro.
+            </p>
+            <p>
+                Durante sua jornada, Otávio entra em
+                <span class="destaque">três livros principais.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- FINAL -->
+    <section id="final">
+        <h2>LOGORION</h2>
+        <p>Uma aventura dentro dos livros.</p>
+        <a href="#inicio" class="botao-principal">Voltar ao início</a>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p><strong>LOGORION</strong></p>
+        <p>Projeto de jogo educacional</p>
+        <p>© 2026 LOGORION</p>
+    </footer>
+
+</body>
+</html>

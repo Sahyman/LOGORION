@@ -1,0 +1,472 @@
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #07111c;
+            color: white;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: #071522;
+            border-bottom: 1px solid #16496d;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #55baff;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff963c;
+        }
+
+        .botao-menu {
+            border: 1px solid #ff963c;
+            padding: 9px 18px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .botao-menu:hover {
+            background: #ff963c;
+            color: #07111c;
+        }
+
+        /* =========================
+           INÍCIO
+        ========================= */
+
+        #inicio {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+            background: radial-gradient(
+                circle,
+                #123d61 0%,
+                #0a2035 45%,
+                #050b12 100%
+            );
+        }
+
+        .inicio-conteudo {
+            max-width: 900px;
+        }
+
+        .inicio-conteudo h1 {
+            font-size: clamp(60px, 10vw, 110px);
+            letter-spacing: 12px;
+            color: #5fc3ff;
+            text-shadow: 0 0 10px #1684c4, 0 0 30px #07517e;
+        }
+
+        .inicio-conteudo h2 {
+            margin-top: 15px;
+            color: #ff9a3c;
+            font-size: 23px;
+            font-weight: normal;
+        }
+
+        .inicio-conteudo p {
+            max-width: 700px;
+            margin: 30px auto;
+            line-height: 1.8;
+            color: #d1dbe4;
+            font-size: 17px;
+        }
+
+        .botao-principal {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #ff9135;
+            color: #07111c;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .botao-principal:hover {
+            background: #ffad62;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .titulo-secao h2 {
+            font-size: 40px;
+            color: #5fc3ff;
+            margin-bottom: 12px;
+        }
+
+        .titulo-secao p {
+            color: #9eacb9;
+        }
+
+        /* =========================
+           HISTÓRIA
+        ========================= */
+
+        #historia {
+            background: #081725;
+        }
+
+        .historia-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .historia-texto h3 {
+            font-size: 29px;
+            color: #ff963c;
+            margin-bottom: 20px;
+        }
+
+        .historia-texto p {
+            color: #c8d2db;
+            line-height: 1.9;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        /* Correção aplicada na imagem da história */
+        .espaco-imagem {
+            width: 100%;
+            height: 370px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #0c1b2a;
+            border: 1px solid #194c70;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .espaco-imagem:hover {
+            border-color: #ff963c;
+            box-shadow: 0 10px 25px rgba(0, 100, 180, 0.25);
+        }
+
+        .espaco-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* =========================
+           PERSONAGENS
+        ========================= */
+
+        #personagens {
+            background: #050d16;
+        }
+
+        .personagens-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .personagem {
+            background: #0c1b2a;
+            border: 1px solid #194c70;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .personagem:hover {
+            transform: translateY(-7px);
+            border-color: #ff963c;
+            box-shadow: 0 10px 25px rgba(0, 100, 180, 0.25);
+        }
+
+        .imagem-personagem {
+            width: 100%;
+            height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #091725;
+            border-bottom: 1px dashed #24658e;
+        }
+
+        .imagem-personagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .informacoes-personagem {
+            padding: 25px;
+        }
+
+        .informacoes-personagem h3 {
+            font-size: 27px;
+            color: #5fc3ff;
+            margin-bottom: 8px;
+        }
+
+        .funcao {
+            color: #ff963c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .informacoes-personagem p {
+            color: #b7c3ce;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           LIVROS
+        ========================= */
+
+        #livros {
+            background: #081725;
+        }
+
+        .texto-livros {
+            max-width: 750px;
+            margin: 0 auto 50px;
+            text-align: center;
+            color: #c1ccd5;
+            line-height: 1.8;
+        }
+
+        .livros-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .livro {
+            background: #0c1b2a;
+            border: 1px solid #194c70;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .livro:hover {
+            transform: translateY(-7px);
+            border-color: #ff963c;
+            box-shadow: 0 10px 25px rgba(0, 100, 180, 0.20);
+        }
+
+        .capa-livro {
+            width: 100%;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0b2034;
+            border-bottom: 1px dashed #24658e;
+            overflow: hidden;
+        }
+
+        .capa-livro img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .informacoes-livro {
+            padding: 25px;
+        }
+
+        .numero-livro {
+            color: #ff963c;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .informacoes-livro h3 {
+            color: #5fc3ff;
+            font-size: 25px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .informacoes-livro p {
+            color: #b7c3ce;
+            line-height: 1.7;
+        }
+
+        #mapa1, #mapa2, #mapa3 {
+            width: 100%;
+        }
+
+        /* =========================
+           O JOGO
+        ========================= */
+
+        #jogo {
+            background: #050d16;
+            text-align: center;
+        }
+
+        .jogo-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .jogo-container p {
+            color: #c4ced7;
+            line-height: 1.9;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .destaque {
+            color: #ff963c;
+            font-weight: bold;
+        }
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        #final {
+            text-align: center;
+            background: radial-gradient(
+                circle,
+                #123d61,
+                #081725 65%,
+                #050b12
+            );
+        }
+
+        #final h2 {
+            font-size: 40px;
+            color: #5fc3ff;
+            margin-bottom: 20px;
+        }
+
+        #final p {
+            color: #c0cbd4;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+
+            .historia-container {
+                grid-template-columns: 1fr;
+            }
+
+            .personagens-container,
+            .livros-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .logo {
+                font-size: 21px;
+            }
+
+            .botao-menu {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+            .inicio-conteudo h1 {
+                font-size: 50px;
+                letter-spacing: 4px;
+            }
+
+            .inicio-conteudo h2 {
+                font-size: 19px;
+            }
+
+            .titulo-secao h2 {
+                font-size: 31px;
+            }
+
+        }
+        #mapa1{
+            width: 40vw;
+        }
+        #mapa2{
+             width: 40vw;
+        }
+        #mapa3{
+            width: 40vw;
+        }
+       #bart{
+        width:200%;
+       }
