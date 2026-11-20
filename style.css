@@ -1,4 +1,4 @@
-     * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -177,7 +177,6 @@
             font-size: 16px;
         }
 
-        /* Correção aplicada na imagem da história */
         .espaco-imagem {
             width: 100%;
             height: 370px;
@@ -380,6 +379,37 @@
             font-weight: bold;
         }
 
+        .botao-download {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 15px 34px;
+            background: #ff9135;
+            color: #07111c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .botao-download:hover {
+            background: #ffad62;
+            transform: translateY(-3px);
+        }
+
+        .info-download {
+            margin-top: 14px;
+            font-size: 14px !important;
+            color: #9eacb9 !important;
+        }
+
+        .status-download {
+            margin-top: 12px;
+            font-size: 15px !important;
+            color: #5fc3ff !important;
+            min-height: 24px;
+        }
+
         /* =========================
            FINAL
         ========================= */
@@ -409,7 +439,14 @@
            RODAPÉ
         ========================= */
 
-        
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #040a11;
+            border-top: 1px solid #16496d;
+            color: #9eacb9;
+            line-height: 1.8;
+        }
 
         /* =========================
            RESPONSIVIDADE
@@ -456,17 +493,5 @@
             .titulo-secao h2 {
                 font-size: 31px;
             }
-
         }
-        #mapa1{
-            width: 40vw;
-        }
-        #mapa2{
-             width: 40vw;
-        }
-        #mapa3{
-            width: 40vw;
-        }
-       #bart{
-        width:200%;
-       }
+    
