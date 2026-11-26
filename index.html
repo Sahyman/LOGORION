@@ -187,24 +187,22 @@
 
         <div class="jogo-container">
             <p>
-             <p>
-    Não perca a incrível oportunidade de mergulhar de cabeça nesta inesquecível aventura
-     ao lado do nosso corajoso protagonista Otávio! Ao realizar
-      o download deste jogo educacional totalmente gratuito. Prepare-se para aprender, de 
-         forma dinâmica, interativa e profundamente gamificada, focados no ensino da área
-           de Linguagens e suas Tecnologias para o ENEM. Faça o download agora mesmo, extraia os arquivos,
-            inicie a sua jornada dentro dos livros e venha transformar a sua maneira de estudar!
-</p>
-                           </p>
+                Não perca a incrível oportunidade de mergulhar de cabeça nesta inesquecível aventura
+                ao lado do nosso corajoso protagonista Otávio! Ao realizar
+                o download deste jogo educacional totalmente gratuito. Prepare-se para aprender, de 
+                forma dinâmica, interativa e profundamente gamificada, focados no ensino da área
+                de Linguagens e suas Tecnologias para o ENEM. Faça o download agora mesmo, extraia os arquivos,
+                inicie a sua jornada dentro dos livros e venha transformar a sua maneira de estudar!
+            </p>
 
-        <a
-    href="https://github.com/Sahyman/LOGORION/releases/download/v1.0/Logorion.zip"
-    download="Logorion.zip"
-    id="btn-download-jogo"
-    class="botao-download"
->
-    Download de LOGORION
-</a>
+            <a
+                href="https://github.com/Sahyman/LOGORION/releases/download/v1.0/Logorion.zip"
+                download="Logorion.zip"
+                id="btn-download-jogo"
+                class="botao-download"
+            >
+                Download de LOGORION
+            </a>
 
             <p class="info-download">
                 Pacote do jogo (.ZIP) • Após baixar, extraia a pasta e abra o executável
@@ -225,21 +223,24 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
+    <!-- COMPONENTE USERWAY -->
+    <script src="https://cdn.userway.org/widget.js" data-account="SEU_ACCOUNT_ID"></script>
+
     <footer>
         <p><strong>LOGORION</strong></p>
         <p>Projeto de jogo educacional</p>
         <p>© 2026 LOGORION</p>
     </footer>
 
-<script>
-    const botaoDownload = document.getElementById("btn-download-jogo");
-    const statusDownload = document.getElementById("status-download");
+    <script>
+        const botaoDownload = document.getElementById("btn-download-jogo");
+        const statusDownload = document.getElementById("status-download");
 
-    botaoDownload.addEventListener("click", () => {
-        statusDownload.textContent =
-            "Download iniciado! Extraia o arquivo Logorion.zip e execute o jogo no seu computador.";
-    });
-</script>
+        botaoDownload.addEventListener("click", () => {
+            statusDownload.textContent =
+                "Download iniciado! Extraia o arquivo Logorion.zip e execute o jogo no seu computador.";
+        });
+    </script>
 
 </body>
 </html>
